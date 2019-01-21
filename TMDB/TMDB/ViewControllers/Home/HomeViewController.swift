@@ -68,6 +68,7 @@ class HomeViewController: UIViewController {
     
     fileprivate func beginImageDownload(from imageUrl: String?) {
         guard let imageUrl = imageUrl, let url = URL(string: imageUrl) else {
+            bestMovieImage.image = UIImage(named: AppConstants.placeHolder)
             activityIndicator.stopAnimating()
             return
         }

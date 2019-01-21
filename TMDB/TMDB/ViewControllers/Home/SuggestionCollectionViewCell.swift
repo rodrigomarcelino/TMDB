@@ -24,6 +24,7 @@ class SuggestionCollectionViewCell: UICollectionViewCell{
     //MARK:- Private methods
     fileprivate func beginImageDownload(from imageUrl: String?) {
         guard let imageUrl = imageUrl, let url = URL(string: imageUrl) else {
+            posterImageView.image = UIImage(named: AppConstants.placeHolder)
             activityIndicator.stopAnimating()
             return
         }
